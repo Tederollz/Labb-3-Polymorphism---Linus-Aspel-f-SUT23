@@ -6,15 +6,15 @@ namespace Labb_3___Polymorphism___Linus_Aspelöf_SUT23
     {
         static void Main(string[] args)
         {
-            Geometri[] geometriskaFigurer = new Geometri[3];
+            Geometry[] Shapes = new Geometry[3];
 
-            geometriskaFigurer[0] = new Rektangel(5, 4);
-            geometriskaFigurer[1] = new Fyrkant(3);
-            geometriskaFigurer[2] = new Cirkel(2);
+            Shapes[0] = new Rectangle(5, 4);
+            Shapes[1] = new Square(3);
+            Shapes[2] = new Circle(2);
 
-            foreach (var figur in geometriskaFigurer)
+            foreach (var obj in Shapes)
             {
-                Console.WriteLine($"Area: {figur.Area()}");
+                Console.WriteLine($"Area: {obj.GetArea()}");
             }
         }
     }

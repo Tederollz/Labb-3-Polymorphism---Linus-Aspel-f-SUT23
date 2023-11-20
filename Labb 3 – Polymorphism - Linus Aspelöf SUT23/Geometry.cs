@@ -6,58 +6,61 @@ using System.Threading.Tasks;
 
 namespace Labb_3___Polymorphism___Linus_Aspelöf_SUT23
 {
-    public class Geometri
+    public class Geometry
     {
-        public virtual double Area()
+        public virtual double GetArea()
         {
             return 0.0;
         }
     }
 
-    public class Rektangel : Geometri
+    public class Rectangle : Geometry
     {
         public double Length { get; set; }
         public double Width { get; set; }
 
-        public Rektangel(double length, double width)
+        public Rectangle(double length, double width)
         {
             Length = length;
             Width = width;
         }
 
-        public override double Area()
+        public override double GetArea()
         {
-            return Length * Width;
+            double area = Length * Width;
+            return Math.Round(area, 2);
         }
     }
 
-    public class Fyrkant : Geometri
+    public class Square : Geometry
     {
         public double SideLength { get; set; }
 
-        public Fyrkant(double sideLength)
+        public Square(double sideLength)
         {
             SideLength = sideLength;
         }
 
-        public override double Area()
+        public override double GetArea()
         {
-            return SideLength * SideLength;
+            double area = SideLength * SideLength;
+            return Math.Round(area, 2);
         }
     }
 
-    public class Cirkel : Geometri
+    public class Circle : Geometry
     {
         public double Radius { get; set; }
 
-        public Cirkel(double radius)
+        public Circle(double radius)
         {
             Radius = radius;
         }
 
-        public override double Area()
+        public override double GetArea()
         {
-            return Math.PI * Radius * Radius;
+            double area = Math.PI * Radius * Radius;
+            return Math.Round(area, 2);
         }
     }
 }
